@@ -11,7 +11,12 @@ DNS là hệ thống quản lý (Management System) và chuyển đổi tên mi�
 - **Phân giải ngược:** DNS cũng có khả năng phân giải ngược, chuyển đổi địa chỉ IP thành tên miền. Tuy nhiên, chức năng này ít được sử dụng hơn so với chuyển đổi tên miền thành địa chỉ IP.
 
 Nhờ vào DNS, người dùng có thể truy cập các trang web và dịch vụ trực tuyến mà không cần ghi nhớ các địa chỉ IP phức tạp.
-## 1.3.Nguyên lý hoạt động của DNS
+## 1.3.Các loại máy chủ DNS
+- **Recursive Resolver:** Gửi truy vấn thay người dùng, đệ quy hỏi các DNS khác.
+- **Root Name Server:** Điểm bắt đầu của hệ thống DNS, biết các TLD server
+- **TLD Name Server:** Quản lý các tên miền cấp cao như .com, .org…
+- **Authoritative Name Server:** Có thông tin chính xác của tên miền cụ thể
+## 1.4.Nguyên lý hoạt động của DNS
 Người dùng gửi yêu cầu: Khi nhập tên miền vào trình duyệt, một yêu cầu sẽ được gửi đến Recursive DNS Server.
 
 - **Recursive DNS Server tìm kiếm:** Recursive DNS Server thực hiện các bước tìm kiếm thông tin từ Root DNS Server đến Authoritative DNS Server.
@@ -20,4 +25,12 @@ Người dùng gửi yêu cầu: Khi nhập tên miền vào trình duyệt, m�
 
 - **Recursive DNS Server nhận địa chỉ IP:** Được cung cấp địa chỉ IP, Recursive DNS Server trả về thông tin cho trình duyệt và cập nhật bộ nhớ đệm.
 
-- **Trình duyệt kết nối đến máy chủ web:** Trình duyệt sử dụng địa chỉ IP để kết nối đến máy chủ web và tải trang web.
+- **Trình duyệt kết nối đến máy chủ web:** Trình duyệt sử dụng địa chỉ IP để kết nối đến máy chủ web và tải trang web
+## 1.5.Các bản ghi DNS
+- **A:** ánh xạ tên miền đến địa chỉ IPv4
+- **AAAA:** ánh xạ đến địa chỉ IPv6
+- **CNAME:** bí danh cho tên miền khác
+- **MX:** bản ghi mail (Email server)
+- **NS:** xác định DNS Server nào có quyền quản lý
+## 1.6.Lệnh kiểm tra DNS (trên Windows hoặc Linux)
+- nslookup
