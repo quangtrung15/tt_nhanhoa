@@ -1,0 +1,9 @@
+# 1.Dịch vụ
+- VPS (Virtual Private Server) là máy chủ riêng ảo, được tạo ra bằng cách chia một máy chủ vật lý thành nhiều máy chủ ảo bằng công nghệ ảo hóa. Mỗi VPS hoạt động như một máy chủ độc lập, có hệ điều hành riêng, tài nguyên CPU, RAM, dung lượng lưu trữ, và IP riêng.
+- Tên Miền: Đăng ký, chuyển nhượng, khóa tên miền,...
+- Hosting: Dịch vụ lưu trữ.
+- Cloud: Dịch vụ máy chủ đám mây.
+- Máy Chủ: Thuê máy chủ riêng, quản trị máy chủ, backup365,...
+- Email: Email server riêng, google workspace,....
+- SSL: Chứng chỉ bảo mật SSL dùng để mã hóa dữ liệu trên website.
+- Website: Các dịch vụ thiết kế hoặc xây dựng website.
