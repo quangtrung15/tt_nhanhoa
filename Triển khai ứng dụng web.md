@@ -46,6 +46,12 @@
 - Kết quả:
 - <img src="https://github.com/user-attachments/assets/08ea5179-e655-42ae-9b59-aaa92ae33b28" alt="image" width="550"/>.
 
+  # Với Linux
+  ## Triển khai được LAMP trên stack
+  - Demo tạm kết quả thu được:
+  - <img src="https://github.com/user-attachments/assets/05105791-c8c8-4f59-84b2-9111a6e61e01" alt="image" width="550"/>.
+
+
 
 
 
