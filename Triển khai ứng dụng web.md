@@ -13,6 +13,9 @@
 ## Triển khai site demo2 ASP classic trên Web Server IIS
 - Cài đặt ASP trên Web Server(IIS)
 - Tạo thư mục và tạo file default.asp
+- Vào Tools > Internet Information Services (IIS) Manager
+- Vào Sites > Add Website...
+- Đặt tên trang(Site name) và chọn đường dẫn đến thư mục chứa trang default.asp
 - Cấu hình DNS
 - Kết quả:
 - <img src="https://github.com/user-attachments/assets/8006d034-b6e4-4c2b-b3ac-873086341921" alt="image" width="400"/>
