@@ -44,7 +44,7 @@
 - Cấu hình DNS
 - Khởi động web
 - Kết quả:
-- <img src="https://github.com/user-attachments/assets/08ea5179-e655-42ae-9b59-aaa92ae33b28" alt="image" width="550"/>
+- <img src="https://github.com/user-attachments/assets/08ea5179-e655-42ae-9b59-aaa92ae33b28" alt="image" width="550"/>.
 
 
 
