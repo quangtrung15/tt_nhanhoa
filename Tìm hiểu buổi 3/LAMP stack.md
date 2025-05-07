@@ -6,3 +6,8 @@
 ## 2.Cài Apache (web server)
 - `sudo apt install apache2 -y`
 - <img src="https://github.com/user-attachments/assets/2a8281dd-8885-4751-856a-7ff5e4633bba" alt="image" width="600"/>
+- Kiểm tra xem cài đặt thành công chưa, mở trình duyệt truy cập `http://<IP-của-Ubuntu>`
+- <img src="https://github.com/user-attachments/assets/b9b26ec0-7e9c-49f9-a4aa-66a416cb1be3" alt="image" width="600"/>
+
+
+
