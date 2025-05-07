@@ -21,6 +21,13 @@
 - Kiểm tra xem PHP đã cài thành công chưa: `php -v`
 - <img src="https://github.com/user-attachments/assets/b0aecd8b-23fe-4f87-80fd-f6cb30629056" alt="image" width="600"/>
 
+## 5.Cài đặt WordPress
+- Tạo database cho WordPress: `sudo mysql -u root -p`
+- ![image](https://github.com/user-attachments/assets/c7177a0f-060f-4451-83bc-f21164e1b04a)
+
+
+
+
 
 
 
