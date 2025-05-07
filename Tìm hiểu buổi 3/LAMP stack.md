@@ -41,6 +41,45 @@ wget https://wordpress.org/latest.tar.gz
 tar -xvzf latest.tar.gz
 ```
 - <img src="https://github.com/user-attachments/assets/89dd7480-8d32-4458-95f5-d2df02257343" alt="image" width="600"/>
+### 5.3.Di chuyển vào thư mục web
+```bash
+sudo rm -rf /var/www/html/*
+sudo mv wordpress/* /var/www/html/
+```
+- ![image](https://github.com/user-attachments/assets/20d9432b-57df-4acf-b2c6-50d9e08691f4)
+### 5.4.Cấp quyền thư mục
+```bash
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 755 /var/www/html
+```
+- ![image](https://github.com/user-attachments/assets/dd46c043-1a41-40e0-9a0d-9326d28729c2)
+### 5.4.Tạo file cấu hình WordPress
+```bash
+sudo cp wp-config-sample.php wp-config.php
+```
+- ![image](https://github.com/user-attachments/assets/50784306-2c7b-47d4-a8c2-f568dfa5be04)
+- Sửa wp-config.php: `sudo nano wp-config.php`
+- ![image](https://github.com/user-attachments/assets/a4598bc7-e27d-483a-8b88-a5c38c3cb165)
+### 5.5.Khởi động lại Apache
+  - `sudo systemctl restart apache2`
+
+## Kiểm thử:
+- ![image](https://github.com/user-attachments/assets/20dd3ac7-27e2-4cbe-bbf2-9f2b7cc4eaec)
+- ![image](https://github.com/user-attachments/assets/eb1e830c-2861-4dae-9957-1fb56a4d8deb)
+- ![image](https://github.com/user-attachments/assets/86628846-4660-412c-b254-c6ce660740a8)
+- ![image](https://github.com/user-attachments/assets/97858ee6-6d7d-4498-9cca-930e120ec47e)
+  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
