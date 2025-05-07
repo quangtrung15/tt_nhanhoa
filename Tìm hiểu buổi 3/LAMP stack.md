@@ -40,6 +40,8 @@ cd /tmp
 wget https://wordpress.org/latest.tar.gz
 tar -xvzf latest.tar.gz
 ```
+- <img src="https://github.com/user-attachments/assets/89dd7480-8d32-4458-95f5-d2df02257343" alt="image" width="600"/>
+
 
 
 
