@@ -1,3 +1,9 @@
+# LAMP là gì?
+- LAMP là viết tắt của một bộ công nghệ mã nguồn mở dùng để xây dựng web server và ứng dụng web. Nó bao gồm 4 thành phần chính:
+- L - Linux	Hệ điều hành nền tảng (Ubuntu, CentOS, Debian...)
+- A - Apache	Phần mềm Web Server – xử lý và phục vụ các yêu cầu HTTP
+- M - MySQL / MariaDB	Hệ quản trị cơ sở dữ liệu – lưu trữ dữ liệu cho website
+- P - PHP	Ngôn ngữ lập trình để xử lý logic phía server
 # Triển khai site wordpress trên LAMP stack
 ## 1.Cập nhật hệ thống
 - Cập nhật hệ thống: `sudo apt update && sudo apt upgrade -y`
