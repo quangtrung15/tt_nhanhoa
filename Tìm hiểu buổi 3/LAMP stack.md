@@ -18,6 +18,9 @@
 ## 4.Cài PHP + module cần thiết
 - `sudo apt install php libapache2-mod-php php-mysql php-curl php-xml php-gd php-mbstring -y`
 - <img src="https://github.com/user-attachments/assets/caa9d8a7-0a23-44cd-a05a-644af685feb2" alt="image" width="600"/>
+- Kiểm tra xem PHP đã cài thành công chưa: `php -v`
+- <img src="https://github.com/user-attachments/assets/b0aecd8b-23fe-4f87-80fd-f6cb30629056" alt="image" width="600"/>
+
 
 
 
