@@ -6,5 +6,7 @@ set hostname
 
 chỉnh sửa file hosts
 ![image](https://github.com/user-attachments/assets/30ee462e-3a03-4f47-b8b3-30e6b2cc39d6)
+![image](https://github.com/user-attachments/assets/0c587249-ad84-4564-ae32-b2771ba914fc)
+
 
 
