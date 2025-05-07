@@ -10,7 +10,7 @@
 - <img src="https://github.com/user-attachments/assets/b9b26ec0-7e9c-49f9-a4aa-66a416cb1be3" alt="image" width="600"/>
 
 ## 3.Cài đặt MySQL
-- `sudo apt install mysql-server -y`
+- Cài đặt bảo mật: `sudo apt install mysql-server -y`
 - <img src="https://github.com/user-attachments/assets/e15c6081-8ff3-4408-9e43-095e237010f4" alt="image" width="600"/>
 - Cài đặt bảo mật: `sudo mysql_secure_installation`
 - <img src="https://github.com/user-attachments/assets/9e619f8e-a28d-4ea3-aca6-1be726a81cdd" alt="image" width="600"/>
