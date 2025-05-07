@@ -24,7 +24,8 @@
 ## 5.Cài đặt WordPress
 - Tạo database cho WordPress: `sudo mysql -u root -p`
 - <img src="https://github.com/user-attachments/assets/c7177a0f-060f-4451-83bc-f21164e1b04a" alt="image" width="600"/>
-- ```sql
+
+```sql
 CREATE DATABASE wordpress_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'Trung03!';
 GRANT ALL PRIVILEGES ON wordpress_db.* TO 'wp_user'@'localhost';
@@ -32,9 +33,8 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
+- <img src="https://github.com/user-attachments/assets/0e8deb1a-9ce3-433e-821f-909c29d60901" alt="image" width="600"/>
 
-
-- ![image](https://github.com/user-attachments/assets/0e8deb1a-9ce3-433e-821f-909c29d60901)
 
 
 
