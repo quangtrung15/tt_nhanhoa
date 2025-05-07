@@ -4,3 +4,16 @@
 - E – Nginx (đọc là “Engine-X”)	Web server thay cho Apache
 - M - MySQL / MariaDB	Hệ quản trị cơ sở dữ liệu – lưu trữ dữ liệu cho website
 - P - PHP	Ngôn ngữ lập trình để xử lý logic phía server
+
+# Triển khai site wordpress trên LEMP stack
+## 1.Cập nhật hệ thống:
+- `sudo apt update`
+- 
+## 2.Cài đặt Nginx
+- `sudo apt install nginx -y`
+- 
+- Kiểm tra cài đặt xem thành công chưa, mở trình duyệt truy cập: http://<IP-của-Ubuntu>
+- 
+
+
+
