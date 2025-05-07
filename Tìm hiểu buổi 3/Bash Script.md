@@ -61,3 +61,8 @@ echo "✅ LAMP và WordPress đã được cài đặt!"
 echo "👉 Truy cập http://$(hostname -I | awk '{print $1}') để bắt đầu cài đặt WordPress."
 ```
 
+## Cách sử dụng:
+### Cấp quyền chạy
+- `chmod +x install-lamp-wordpress.sh`
+### Chạy script:
+- `./install-lamp-wordpress.sh`
