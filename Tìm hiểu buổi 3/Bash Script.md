@@ -57,8 +57,6 @@ sudo sed -i "s/database_name_here/${DB_NAME}/" wp-config.php
 sudo sed -i "s/username_here/${DB_USER}/" wp-config.php
 sudo sed -i "s/password_here/${DB_PASS}/" wp-config.php
 
-echo "✅ LAMP và WordPress đã được cài đặt!"
-echo "👉 Truy cập http://$(hostname -I | awk '{print $1}') để bắt đầu cài đặt WordPress."
 ```
 
 ## Cách sử dụng:
@@ -150,8 +148,6 @@ sudo ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl reload nginx
 
-echo "✅ LEMP và WordPress đã được cài đặt!"
-echo "👉 Truy cập http://$(hostname -I | awk '{print $1}') để bắt đầu cài đặt WordPress."
 ```
 ## Cách sử dụng:
 ### Cấp quyền chạy
