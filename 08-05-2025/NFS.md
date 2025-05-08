@@ -87,6 +87,9 @@
 - `sudo umount /mnt/lab_nfs`
 - ![image](https://github.com/user-attachments/assets/7b056944-79a0-4dbe-a7b5-459d82cb5787)
 
+  # Tài liệu tham khảo
+  - https://azdigi.com/blog/linux-server/linux-can-ban/nfs-la-gi-huong-dan-cai-dat-va-su-dung-nfs-tren-linux/#content-Cai_dat_NFS_Server_tren_UbuntuDebian
+
 
 
 
