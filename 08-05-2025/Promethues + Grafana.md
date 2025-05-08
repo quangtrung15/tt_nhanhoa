@@ -10,7 +10,8 @@
 - Grafana cho phép bạn tạo bảng thông tin tương tác và hấp dẫn về mặt hình ảnh để trực quan hóa dữ liệu, tương tự như Tableau hoặc các đối thủ cạnh tranh của nó . Nó cho phép theo dõi thời gian thực nhiều nguồn dữ liệu khác nhau, ví dụ, để theo dõi cụm Kubernetes và hỗ trợ phân tích dữ liệu chuyên sâu, cung cấp thông tin chi tiết về hiệu suất hệ thống của bạn. Điều này có thể giúp bạn đưa ra quyết định sáng suốt hơn. Grafana cũng cho phép bạn thiết lập cảnh báo dựa trên các điều kiện được xác định trước, thông báo cho bạn về các sự cố trước khi chúng trở thành vấn đề.
 
 # 2.Triển khai Promethues và Grafana
-## 2.1.1.Cài đặt Promethues
+## 2.1.Promethues
+### 2.1.1.Cài đặt Promethues
 - Bước 1 — Cập nhật các gói hệ thống
 - `sudo apt update`
 - ![image](https://github.com/user-attachments/assets/42e4b7bb-0f13-4835-9707-96d77ee96ba9)
@@ -35,7 +36,7 @@
 - Bước 5- Điều hướng đến Thư mục Prometheus
 - `cd prometheus*/`
 - ![image](https://github.com/user-attachments/assets/d871d7d4-1fe4-4d67-a112-f9a2a3ef4d0a)
-## 2.1.2.Cấu hình Prometheus trên Ubuntu 22.04
+### 2.1.2.Cấu hình Prometheus trên Ubuntu 22.04
 - Bước 1 — Di chuyển các tệp nhị phân và đặt chủ sở hữu
 - ```
   sudo mv prometheus /usr/local/bin 
@@ -106,7 +107,7 @@
 - ![image](https://github.com/user-attachments/assets/e090e7e3-ea98-45ed-ab6b-280fd80d2eb8)
 - Khi Prometheus chạy thành công, bạn có thể truy cập nó thông qua trình duyệt web bằng cách sử dụng localhost:9090 hoặc <ip_address>:9090
 - ![image](https://github.com/user-attachments/assets/abfca9f7-5f30-4731-bc50-f57c07e3cdb0)
-## 2.1.3.Cài đặt và cấu hình Node Exporter
+### 2.1.3.Cài đặt và cấu hình Node Exporter
 - Tạo người dùng hệ thống cho Node Exporter bằng lệnh sau
 - ```
   sudo useradd \ 
@@ -149,11 +150,12 @@
 - `sudo ufw allow 9100/tcp`
 - Truy cập:
 - `http://192.168.88.142:9100/metrics`
-## 2.1.4.Nguồn tài liệu tham khảo: 
+### 2.1.4.Nguồn tài liệu tham khảo: 
 - https://medium.com/@ranjith_99360/how-to-install-prometheus-on-ubuntu-22-04-e036e0e101cc
 - https://medium.com/@vishnurajlegna/2023-effortless-setup-of-prometheus-node-exporter-and-grafana-on-aws-ec2-ubuntu-22-04-f65d62dd39aa
 
-## 2.2.1.Cài đặt Grafana
+## 2.2.Grafana
+### 2.2.1.Cài đặt Grafana
 - Bước 1 - Cập nhật và nâng cấp
 - `sudo apt update -y && sudo apt upgrade -y`
 - ![image](https://github.com/user-attachments/assets/a759aa5a-c63c-4adb-966b-83f283e96451)
@@ -204,7 +206,7 @@
 - Sau khi đăng nhập thay đổi mật khẩu
 - ![image](https://github.com/user-attachments/assets/f6bf74f6-ce26-462a-b94b-735d3e4be509)
 - ![image](https://github.com/user-attachments/assets/69e562dd-15cb-49d7-a739-7a8d198941f1)
-## 2.2.2.Tài liệu tham khảo
+### 2.2.2.Tài liệu tham khảo
 - https://www.cherryservers.com/blog/install-grafana-ubuntu#what-is-grafana
 
 
