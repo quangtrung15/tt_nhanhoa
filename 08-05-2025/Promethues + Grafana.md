@@ -17,4 +17,12 @@
   sudo groupadd --system prometheus 
   sudo useradd -s /sbin/nologin --system -g prometheus prometheus
   ```
-- 
+- ![image](https://github.com/user-attachments/assets/42bafcf3-5c40-40e7-b2d8-fdaf9eff50bb)
+- Bước 3 — Tạo thư mục cho Prometheus
+- ```
+  sudo mkdir /etc/prometheus 
+  sudo mkdir /var/lib/prometheus
+  ```
+- ![image](https://github.com/user-attachments/assets/eeffe8ee-4e7b-4310-af64-76c3c5670517)
+
+
