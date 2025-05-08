@@ -99,7 +99,14 @@
 - ![image](https://github.com/user-attachments/assets/6a10dc3a-a305-4909-970d-b3f815cab968)
 - ![image](https://github.com/user-attachments/assets/996ce730-efe1-4b3c-9159-8267ec5d95be)
 - Truy cập Giao diện Web Prometheus
-- 
+- Prometheus chạy trên cổng 9090 theo mặc định nên bạn cần cho phép cổng 9090 trên tường lửa của mình. Thực hiện bằng lệnh:
+- `sudo ufw allow 9090/tcp`
+- ![image](https://github.com/user-attachments/assets/e090e7e3-ea98-45ed-ab6b-280fd80d2eb8)
+- Khi Prometheus chạy thành công, bạn có thể truy cập nó thông qua trình duyệt web bằng cách sử dụng localhost:9090 hoặc <ip_address>:9090
+- ![image](https://github.com/user-attachments/assets/abfca9f7-5f30-4731-bc50-f57c07e3cdb0)
+# Nguồn tài liệu tham khảo: 
+- https://medium.com/@ranjith_99360/how-to-install-prometheus-on-ubuntu-22-04-e036e0e101cc
+
 
 
 
