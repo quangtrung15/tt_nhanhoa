@@ -106,6 +106,39 @@
 - ![image](https://github.com/user-attachments/assets/e090e7e3-ea98-45ed-ab6b-280fd80d2eb8)
 - Khi Prometheus chạy thành công, bạn có thể truy cập nó thông qua trình duyệt web bằng cách sử dụng localhost:9090 hoặc <ip_address>:9090
 - ![image](https://github.com/user-attachments/assets/abfca9f7-5f30-4731-bc50-f57c07e3cdb0)
+## 2.1.3.Cài đặt và cấu hình Node Exporter
+- Tạo người dùng hệ thống cho Node Exporter bằng lệnh sau
+- ```
+  sudo useradd \ 
+    --system \ 
+    --no-create-home \ 
+    --shell /bin/false node_exporter
+  ```
+- ![image](https://github.com/user-attachments/assets/4100eafb-62f4-435f-a8ba-4e3d4f853627)
+- Tải xuống và cài đặt Node Exporter
+- `wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz`
+- ![image](https://github.com/user-attachments/assets/ed6abacb-cc57-44ae-aa50-d9690cf73027)
+- Trích xuất Node Exporter
+- `tar -xvf node_exporter-1.6.1.linux-amd64.tar.gz`
+- ![image](https://github.com/user-attachments/assets/5f9b4704-98c0-465d-95ef-e209b5a2b156)
+- Di chuyển tệp nhị phân Node Exporter tới /usr/local/bin/:
+- `sudo mv node_exporter-1.6.1.linux-amd64/node_exporter /usr/local/bin/`
+- Tạo dịch vụ systemd cho Node Exporter
+- `sudo nano /etc/systemd/system/node_exporter.service`
+- ![image](https://github.com/user-attachments/assets/7d35f67d-58f2-4f08-823f-8a1ee5af8473)
+- Kích hoạt và khởi động Node Exporter
+- `sudo systemctl enable node_exporter`
+- ![image](https://github.com/user-attachments/assets/fab8f18e-51e3-4544-a9b1-d7926fcddd0d)
+- `sudo systemctl start node_exporter`
+- ![image](https://github.com/user-attachments/assets/585cb71b-5c17-4554-b11f-721a7416308e)
+- Kiểm tra trạng thái
+- `sudo systemctl status node_exporter`
+- ![image](https://github.com/user-attachments/assets/7abf5a3c-d7d2-40e2-ad78-e465d8df175c)
+
+
+
+
+
 ## 2.1.4.Nguồn tài liệu tham khảo: 
 - https://medium.com/@ranjith_99360/how-to-install-prometheus-on-ubuntu-22-04-e036e0e101cc
 
