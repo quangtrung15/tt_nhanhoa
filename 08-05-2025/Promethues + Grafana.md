@@ -209,6 +209,99 @@
 ### 2.2.2.Tài liệu tham khảo
 - https://www.cherryservers.com/blog/install-grafana-ubuntu#what-is-grafana
 
+## 2.3.Cài đặt Prometheus MySQL Exporter
+- Bước 1: Thêm người dùng và nhóm hệ thống Prometheus
+- ```
+  sudo groupadd --system prometheus
+  sudo useradd -s /sbin/nologin --system -g prometheus prometheus
+  ```
+- Bước 2: Cài đặt Prometheus MySQL Exporter
+- `curl -s https://api.github.com/repos/prometheus/mysqld_exporter/releases/latest   | grep browser_download_url | grep linux-amd64 |  cut -d '"' -f 4 | wget -qi `
+- ![image](https://github.com/user-attachments/assets/94253a7c-2fba-420f-beef-4cfd579293d7)
+- Giải nén file sau khi tải xuống
+- `tar xvf mysqld_exporter-*.linux-amd64.tar.gz`
+- ![image](https://github.com/user-attachments/assets/263fea11-9a09-4c7d-8a6f-9f524b172450)
+- Cung cấp các bit thực thi cho tệp đã giải nén và di chuyển nó đến thư mục /usr/local/bin
+- `cd mysqld_exporter-*.linux-amd64/`
+- ![image](https://github.com/user-attachments/assets/d9994611-a84a-41f8-8de5-4b329fa0a857)
+- Cài đặt sạch bằng cách xóa tarball và thư mục giải nén
+- ```
+  chmod +x mysqld_exporter
+  sudo mv mysqld_exporter /usr/local/bin
+  ```
+- ![image](https://github.com/user-attachments/assets/2dd15abc-7f5a-4a85-b88a-f43f142c749a)
+- Kiểm tra phiên bản phần mềm đã cài đặt
+- `mysqld_exporter --version`
+- ![image](https://github.com/user-attachments/assets/401b9228-528f-4f52-82ce-25c58c7b1329)
+- Bước 3: Tạo người dùng cơ sở dữ liệu xuất khẩu Prometheus
+- Đăng nhập vào shell máy chủ MySQL với tư cách là người dùng root
+- `mysql -u root -p`
+- ![image](https://github.com/user-attachments/assets/93f22ed5-499b-4fba-958a-3829667bf4cf)
+- Người dùng phải có  PROCESS, SELECT, REPLICATION CLIENT quyền
+- ```
+  CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY 'StrongPassword' WITH MAX_USER_CONNECTIONS 2;
+  GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';
+  FLUSH PRIVILEGES;
+  EXIT
+  ```
+- Bước 4: Cấu hình thông tin xác thực cơ sở dữ liệu
+- Tạo tệp thông tin xác thực cơ sở dữ liệu
+- `sudo nano /etc/.mysqld_exporter.cnf`
+- ![image](https://github.com/user-attachments/assets/0208ba5c-5594-4f9c-9c13-28157e652fc3)
+- Thêm tên người dùng và mật khẩu chính xác để tạo người dùng
+- ```
+  [client]
+  user=mysqld_exporter
+  password=StrongPassword
+  ```
+- ![image](https://github.com/user-attachments/assets/9b6f2c34-2f48-4cf3-8784-68f51453848b)
+- Thiết lập quyền sở hữu:
+- `sudo chown root:prometheus /etc/.mysqld_exporter.cnf`
+- ![image](https://github.com/user-attachments/assets/b6b58ed6-b3ff-4f2e-8c34-d4aa88060bcd)
+- Bước 5: Tạo file đơn vị systemd (Dành cho hệ thống Systemd)
+- Tạo một tệp dịch vụ mới
+- `sudo nano /etc/systemd/system/mysql_exporter.service`
+- ![image](https://github.com/user-attachments/assets/1abf9990-4365-4594-85cf-1cd27a190e64)
+- Thêm nội dung sau
+- ```
+  [Unit]
+  Description=Prometheus MySQL Exporter
+  After=network.target
+  User=prometheus
+  Group=prometheus
+  
+  [Service]
+  Type=simple
+  Restart=always
+  ExecStart=/usr/local/bin/mysqld_exporter \
+  --config.my-cnf /etc/.mysqld_exporter.cnf \
+  --web.listen-address=0.0.0.0:9104
+  
+  [Install]
+  WantedBy=multi-user.target
+  ```
+- ![image](https://github.com/user-attachments/assets/8847cb04-d28d-4de6-bf47-4e90fe679297)
+- Khi hoàn tất, hãy tải lại systemd và khởi động  mysql_exporter dịch vụ
+- ```
+  sudo systemctl daemon-reload
+  sudo systemctl enable mysql_exporter
+  sudo systemctl start mysql_exporter
+  ```
+- ![image](https://github.com/user-attachments/assets/86fe9f6a-3666-4f93-adc6-e54be76419ce)
+- ![image](https://github.com/user-attachments/assets/08e5f04c-9a3a-45aa-a6ad-c28849a66163)
+### Tài liệu tham khảo 
+- https://computingforgeeks.com/install-and-configure-prometheus-mysql-exporter-on-ubuntu-centos/
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
