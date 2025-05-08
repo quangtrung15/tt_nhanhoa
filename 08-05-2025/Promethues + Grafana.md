@@ -341,6 +341,8 @@
 | `node_boot_time_seconds` | Thời gian hệ thống được khởi động |
 | `node_uname_info` | Thông tin nhân hệ điều hành |
 
+- ![image](https://github.com/user-attachments/assets/faeb25c4-330f-4c9e-9f14-b1b02997e807)
+
 ## 2.5.Monitor MySQL
 - MySQL Exporter Metrics
 
