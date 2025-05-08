@@ -134,13 +134,24 @@
 - Kiểm tra trạng thái
 - `sudo systemctl status node_exporter`
 - ![image](https://github.com/user-attachments/assets/7abf5a3c-d7d2-40e2-ad78-e465d8df175c)
-
-
-
-
-
+- Thêm Node Exporter làm mục tiêu trong Prometheus
+- `sudo nano /etc/prometheus/prometheus.yml`
+- Thêm cấu hình công việc sau cho Node Exporter
+- ```
+  - job_name: 'node_export'
+    static_configs:
+      - targets: ["localhost:9100"]
+  ```
+- ![image](https://github.com/user-attachments/assets/c09560db-de53-4000-8b2d-be5a9c0d52f9)
+- Tải lại cấu hình Prometheus
+- `promtool check config /etc/prometheus/prometheus.yml`
+- Cấu hình tường lửa
+- `sudo ufw allow 9100/tcp`
+- Truy cập:
+- `http://192.168.88.142:9100/metrics`
 ## 2.1.4.Nguồn tài liệu tham khảo: 
 - https://medium.com/@ranjith_99360/how-to-install-prometheus-on-ubuntu-22-04-e036e0e101cc
+- https://medium.com/@vishnurajlegna/2023-effortless-setup-of-prometheus-node-exporter-and-grafana-on-aws-ec2-ubuntu-22-04-f65d62dd39aa
 
 ## 2.2.1.Cài đặt Grafana
 - Bước 1 - Cập nhật và nâng cấp
