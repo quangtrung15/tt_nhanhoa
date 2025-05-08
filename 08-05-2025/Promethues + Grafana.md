@@ -292,7 +292,99 @@
 ### Tài liệu tham khảo 
 - https://computingforgeeks.com/install-and-configure-prometheus-mysql-exporter-on-ubuntu-centos/
 
-  
+## 2.4.Monitor Linux Server
+- Có thể monitor server Linux thông qua metric của node_exporter
+- Bảng các metric phổ biến để monitor
+- CPU Metrics
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `node_cpu_seconds_total` | Tổng thời gian CPU dành cho từng trạng thái (`user`, `system`, `idle`, v.v.) |
+| `rate(node_cpu_seconds_total{mode!="idle"}[5m])` | Tỷ lệ sử dụng CPU trung bình trong 5 phút (loại trừ trạng thái `idle`) |
+| `node_load1`, `node_load5`, `node_load15` | Load average trong 1, 5 và 15 phút |
+
+- Memory Metrics
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `node_memory_MemTotal_bytes` | Tổng dung lượng RAM |
+| `node_memory_MemAvailable_bytes` | RAM khả dụng (free + cached + buffers) |
+| `node_memory_MemFree_bytes` | RAM còn trống thực sự |
+| `node_memory_Buffers_bytes` | RAM dùng làm buffer |
+| `node_memory_Cached_bytes` | RAM dùng làm cache |
+| `node_memory_SwapTotal_bytes` | Tổng dung lượng swap |
+| `node_memory_SwapFree_bytes` | Swap còn trống |
+
+- Disk Metrics
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `node_filesystem_size_bytes` | Tổng dung lượng ổ đĩa |
+| `node_filesystem_avail_bytes` | Dung lượng ổ đĩa còn trống |
+| `node_disk_read_bytes_total` | Tổng số byte đã đọc từ đĩa |
+| `node_disk_written_bytes_total` | Tổng số byte đã ghi vào đĩa |
+
+- Network Metrics
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `node_network_receive_bytes_total` | Tổng số byte đã nhận qua mạng |
+| `node_network_transmit_bytes_total` | Tổng số byte đã gửi đi qua mạng |
+| `node_network_receive_errs_total` | Tổng lỗi nhận |
+| `node_network_transmit_errs_total` | Tổng lỗi gửi |
+
+- System Metrics
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `node_time_seconds` | Thời gian hệ thống hiện tại (Unix timestamp) |
+| `node_boot_time_seconds` | Thời gian hệ thống được khởi động |
+| `node_uname_info` | Thông tin nhân hệ điều hành |
+
+## 2.5.Monitor MySQL
+- MySQL Exporter Metrics
+
+- Connection & Threads
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `mysql_global_status_threads_connected` | Số lượng kết nối hiện tại |
+| `mysql_global_status_threads_running` | Số lượng thread đang chạy |
+| `mysql_global_status_max_used_connections` | Số kết nối cao nhất từng được sử dụng |
+| `mysql_global_variables_max_connections` | Giới hạn số kết nối tối đa |
+
+- Query & Operations
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `mysql_global_status_questions` | Tổng số truy vấn client đã gửi |
+| `mysql_global_status_queries` | Tổng số truy vấn được server xử lý |
+| `mysql_global_status_slow_queries` | Tổng số truy vấn chậm |
+| `mysql_global_status_handler_read_rnd_next` | Số lượng đọc toàn bộ bảng (dấu hiệu thiếu index) |
+
+- InnoDB
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `mysql_global_status_innodb_buffer_pool_reads` | Số lần đọc từ disk (cache miss) |
+| `mysql_global_status_innodb_buffer_pool_read_requests` | Tổng yêu cầu đọc (cache hit + miss) |
+| `mysql_global_status_innodb_data_reads` | Số block đọc từ InnoDB |
+| `mysql_global_status_innodb_data_writes` | Số block ghi vào InnoDB |
+
+- Replication (nếu dùng master-slave)
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `mysql_slave_status_slave_io_running` | Trạng thái IO thread |
+| `mysql_slave_status_slave_sql_running` | Trạng thái SQL thread |
+| `mysql_slave_status_seconds_behind_master` | Độ trễ so với master (giây) |
+
+- Others
+
+| Metric | Ý nghĩa |
+|--------|---------|
+| `mysql_up` | Trạng thái MySQL (1 là OK, 0 là down) |
+| `mysql_global_status_uptime` | Thời gian uptime MySQL (giây) |
 
 
 
