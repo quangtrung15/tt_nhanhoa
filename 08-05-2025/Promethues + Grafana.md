@@ -6,6 +6,8 @@
 - Prometheus cũng cung cấp khả năng cảnh báo (alerting) để thông báo về các sự cố hoặc tình trạng không mong muốn trong hệ thống. Người dùng có thể xác định các quy tắc cảnh báo dựa trên các tiêu chí và ngưỡng đã định trước, và Prometheus sẽ gửi thông báo khi các điều kiện cảnh báo được kích hoạt.
 - Hơn nữa, Prometheus cũng hỗ trợ tính năng ghi log (logging), tích hợp với các công cụ và dự án khác trong môi trường Cloud Native như Kubernetes, Docker, Grafana, và nhiều hệ thống khác.Prometheus là một hệ thống giám sát và cảnh báo mã nguồn mở mạnh mẽ, linh hoạt và có khả năng mở rộng, đáp ứng nhu cầu giám sát hệ thống phân tán hiện đại. Nó được sử dụng rộng rãi trong cộng đồng công nghệ để giám sát và quản lý hiệu suất của các ứng dụng và hạ tầng.
 ## 1.2.Grafana
+- Grafana là một ứng dụng web phân tích và trực quan hóa tương tác mã nguồn mở phổ biến được thiết kế để giám sát và trực quan hóa dữ liệu và tạo bảng điều khiển tương tác. Nó cho phép bạn truy vấn dữ liệu và xây dựng biểu đồ, biểu đồ và bảng điều khiển của dữ liệu (số liệu & nhật ký) từ nhiều nguồn dữ liệu được hỗ trợ, giúp việc diễn giải và hiểu dữ liệu dễ dàng hơn.
+- Grafana cho phép bạn tạo bảng thông tin tương tác và hấp dẫn về mặt hình ảnh để trực quan hóa dữ liệu, tương tự như Tableau hoặc các đối thủ cạnh tranh của nó . Nó cho phép theo dõi thời gian thực nhiều nguồn dữ liệu khác nhau, ví dụ, để theo dõi cụm Kubernetes và hỗ trợ phân tích dữ liệu chuyên sâu, cung cấp thông tin chi tiết về hiệu suất hệ thống của bạn. Điều này có thể giúp bạn đưa ra quyết định sáng suốt hơn. Grafana cũng cho phép bạn thiết lập cảnh báo dựa trên các điều kiện được xác định trước, thông báo cho bạn về các sự cố trước khi chúng trở thành vấn đề.
 
 # 2.Triển khai Promethues và Grafana
 ## 2.1.1.Cài đặt Promethues
@@ -106,6 +108,66 @@
 - ![image](https://github.com/user-attachments/assets/abfca9f7-5f30-4731-bc50-f57c07e3cdb0)
 # Nguồn tài liệu tham khảo: 
 - https://medium.com/@ranjith_99360/how-to-install-prometheus-on-ubuntu-22-04-e036e0e101cc
+
+## 2.2.1.Cài đặt Grafana
+- Bước 1 - Cập nhật và nâng cấp
+- `sudo apt update -y && sudo apt upgrade -y`
+- ![image](https://github.com/user-attachments/assets/a759aa5a-c63c-4adb-966b-83f283e96451)
+- Bước 2 - Cài đặt các gói cần thiết
+- `sudo apt install -y apt-transport-https software-properties-common wget`
+- ![image](https://github.com/user-attachments/assets/003bd6f4-d80a-4fc5-a5ab-d7e0f7108ac3)
+- Bước 3 - Thêm khóa Grafana GPG
+- ```
+  sudo mkdir -p /etc/apt/keyrings/
+  wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+  ```
+- ![image](https://github.com/user-attachments/assets/972e209c-4e8a-44f8-91bb-bb293e4be4cd)
+- Bước 4 - Thêm kho lưu trữ Grafana APT
+- `echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list`
+- ![image](https://github.com/user-attachments/assets/c4a99c02-93e6-41ba-9b8e-19631d7ef94f)
+- Sau khi thêm kho lưu trữ vào hệ thống, hãy cập nhật chỉ mục gói để bao gồm thông tin từ kho lưu trữ mới được thêm vào bằng cách sử dụng:
+- `sudo apt update`
+- Bước 5 - Cài đặt Grafana
+- `sudo apt install grafana`
+- ![image](https://github.com/user-attachments/assets/a9fefd2d-f38d-4127-ab5a-a071c11b64fb)
+- Bước 6 - Khởi động dịch vụ Grafana
+- Sau khi quá trình cài đặt Grafana hoàn tất, bạn có thể xác minh phiên bản bằng cách sử dụng:
+- `sudo grafana-server -v`
+- ![image](https://github.com/user-attachments/assets/9bca64f3-c9c4-4e8f-9c61-6878c90e4be6)
+- Tiếp theo, hãy khởi động dịch vụ Grafana và cho phép nó tự động khởi động khi khởi động lại hệ thống bằng các lệnh sau:
+- ```
+  sudo systemctl start grafana-server
+  sudo systemctl enable grafana-server
+  ```
+- ![image](https://github.com/user-attachments/assets/30c95331-62a5-40d0-9d84-bd7d40df9fb2)
+- Bước 7 - Xác minh rằng dịch vụ Grafana đang chạy
+- `sudo systemctl status grafana-server`
+- ![image](https://github.com/user-attachments/assets/2849d280-d069-4fba-ace3-5d9a04db7638)
+- ![image](https://github.com/user-attachments/assets/27aed3b9-423c-451d-80d6-820abe54e09a)
+- Bước 8 - Mở cổng trong tường lửa
+- Cổng 3000 là cổng mặc định của Grafana cho giao diện web của nó. Để cho phép truy cập bên ngoài vào Grafana, bạn phải bật tường lửa và mở cổng 3000. Để thực hiện việc này, hãy thực hiện các lệnh sau trong terminal của bạn:
+- ```
+  sudo ufw enable 
+  sudo ufw allow ssh
+  sudo ufw allow 3000/tcp
+  ```
+- ![image](https://github.com/user-attachments/assets/60a292a9-ef1a-4945-9228-7c1c29199049)
+- Bước 9 - Truy cập vào giao diện web Grafana
+- `http://your_server_IP:3000`
+- ![image](https://github.com/user-attachments/assets/e3e3c01c-5998-47de-9eeb-88f39881c97e)
+- Tên người dùng: admin
+- Mật khẩu: admin
+- Sau khi đăng nhập thay đổi mật khẩu
+- ![image](https://github.com/user-attachments/assets/f6bf74f6-ce26-462a-b94b-735d3e4be509)
+- ![image](https://github.com/user-attachments/assets/69e562dd-15cb-49d7-a739-7a8d198941f1)
+
+
+
+
+
+
+
+
 
 
 
