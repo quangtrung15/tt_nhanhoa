@@ -8,7 +8,7 @@
 ## 1.2.Grafana
 
 # 2.Triển khai Promethues và Grafana
-## 2.1.Cài đặt Promethues
+## 2.1.1.Cài đặt Promethues
 - Bước 1 — Cập nhật các gói hệ thống
 - `sudo apt update`
 - ![image](https://github.com/user-attachments/assets/42e4b7bb-0f13-4835-9707-96d77ee96ba9)
@@ -24,5 +24,44 @@
   sudo mkdir /var/lib/prometheus
   ```
 - ![image](https://github.com/user-attachments/assets/eeffe8ee-4e7b-4310-af64-76c3c5670517)
+- Bước 4 — Tải xuống Prometheus và giải nén tập tin
+- `wget https://github.com/prometheus/prometheus/releases/download/v2.47.0/prometheus-2.47.0.linux-amd64.tar.gz`
+- ![image](https://github.com/user-attachments/assets/08d9f9e2-ff30-4105-abf6-347ac489d767)
+- Giải nén nội dung của tệp đã tải xuống:
+- `tar vxf prometheus*.tar.gz`
+- ![image](https://github.com/user-attachments/assets/e1c6ade2-9f01-47c4-8a36-dd6ac7ab4822)
+- Bước 5- Điều hướng đến Thư mục Prometheus
+- `cd prometheus*/`
+- ![image](https://github.com/user-attachments/assets/d871d7d4-1fe4-4d67-a112-f9a2a3ef4d0a)
+## 2.1.2.Cấu hình Prometheus trên Ubuntu 22.04
+- Bước 1 — Di chuyển các tệp nhị phân và đặt chủ sở hữu
+- ```
+  sudo mv prometheus /usr/local/bin 
+  sudo mv promtool /usr/local/bin 
+  sudo chown prometheus:prometheus /usr/local/bin/prometheus 
+  sudo chown prometheus:prometheus /usr/local/bin/promtool
+  ```
+- ![image](https://github.com/user-attachments/assets/37843465-206b-4b43-8970-97f27cdd64da)
+- Bước 2 — Di chuyển các tệp cấu hình và đặt chủ sở hữu
+- ```
+  sudo mv consoles /etc/prometheus 
+  sudo mv console_libraries /etc/prometheus 
+  sudo mv prometheus.yml /etc/prometheus
+  ```
+- ![image](https://github.com/user-attachments/assets/4aee961e-8bc9-483e-bedc-2a76b375df8e)
+- ```
+  sudo chown prometheus:prometheus /etc/prometheus 
+  sudo chown -R prometheus:prometheus /etc/prometheus/consoles 
+  sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries 
+  sudo chown -R prometheus:prometheus /var/lib/prometheus
+  ```
+- ![image](https://github.com/user-attachments/assets/df58fd1a-43c8-40d2-a630-b482fdca812a)
+
+
+
+
+
+
+
 
 
