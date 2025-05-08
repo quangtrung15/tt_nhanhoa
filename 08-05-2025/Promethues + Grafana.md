@@ -56,6 +56,59 @@
   sudo chown -R prometheus:prometheus /var/lib/prometheus
   ```
 - ![image](https://github.com/user-attachments/assets/df58fd1a-43c8-40d2-a630-b482fdca812a)
+- Tệp này prometheus.ymllà tệp cấu hình Prometheus chính
+- `sudo nano /etc/prometheus/prometheus.yml`
+- ![image](https://github.com/user-attachments/assets/76196777-cae5-47a1-87f2-26bb5fa0989b)
+- ![image](https://github.com/user-attachments/assets/7ad9c628-1137-4a6c-adc7-c970191bab5d)
+- Bước 3 — Tạo dịch vụ Prometheus Systemd
+- Cần tạo một tệp dịch vụ hệ thống cho Prometheus
+- `sudo nano /etc/systemd/system/prometheus.service`
+- ![image](https://github.com/user-attachments/assets/5c0cb24f-2f13-49d0-b1ae-6cee64881bc8)
+- Bao gồm các thiết lập này vào tệp, lưu và thoát:
+- ```
+  [Unit]
+  Description=Prometheus
+  Wants=network-online.target
+  After=network-online.target
+
+  [Service]
+  User=prometheus
+  Group=prometheus
+  Type=simple
+  ExecStart=/usr/local/bin/prometheus \
+      --config.file /etc/prometheus/prometheus.yml \
+      --storage.tsdb.path /var/lib/prometheus/ \
+      --web.console.templates=/etc/prometheus/consoles \
+      --web.console.libraries=/etc/prometheus/console_libraries
+  
+  [Install]
+  WantedBy=multi-user.target
+  ```
+- ![image](https://github.com/user-attachments/assets/0e2c612f-5715-4acc-b207-499104d9313b)
+- Bước 4 — Tải lại Systemd
+- `sudo systemctl daemon-reload`
+- ![image](https://github.com/user-attachments/assets/41289108-f878-481c-b079-5841adcd1bad)
+- Bước 5 — Khởi động dịch vụ Prometheus
+- ```
+  sudo systemctl enable prometheus
+  sudo systemctl start prometheus
+  ```
+- ![image](https://github.com/user-attachments/assets/2785626a-e277-4ad1-bf1f-1c288e053544)
+- Bước 6 — Kiểm tra trạng thái Prometheus
+- `sudo systemctl status prometheus`
+- ![image](https://github.com/user-attachments/assets/6a10dc3a-a305-4909-970d-b3f815cab968)
+- ![image](https://github.com/user-attachments/assets/996ce730-efe1-4b3c-9159-8267ec5d95be)
+- Truy cập Giao diện Web Prometheus
+- 
+
+
+
+
+
+  
+
+
+
 
 
 
