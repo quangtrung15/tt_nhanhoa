@@ -1,3 +1,20 @@
+# 1.Tổng quan
+## 1.1.MDaemon là gì?
+- MDaemon là một phần mềm quản lý máy chủ email (Email Server) được phát triển bởi công ty phần mềm Alt-N, hoạt động trên hệ điều hành Windows. Đây là giải pháp toàn diện cho các doanh nghiệp cần hệ thống email hiệu quả và bảo mật, với khả năng hỗ trợ nhiều quy mô khác nhau.
+- Được thiết kế để sử dụng với các kết nối dial-up hoặc các kết nối trực tiếp khi không có địa chỉ IP tĩnh, MDaemon trở thành lựa chọn thay thế phổ biến cho các hệ thống email phức tạp như Microsoft Exchange nhờ vào tính linh hoạt và dễ dàng cấu hình.
+## 1.2.Các tính năng của MDaemon
+### 1.2.1.Hỗ trợ các giao thức email POP3, SMTP và IMAP4
+- MDaemon hỗ trợ các giao thức email phổ biến như POP3, SMTP và IMAP4 trên các hệ điều hành Windows 7, 8, 10 và Windows Server 2019, 2016, 2012. Điều này giúp người dùng dễ dàng kết nối và sử dụng email từ bất kỳ thiết bị nào.
+### 1.2.2.Cho phép nhiều người dùng trên cùng một mạng LAN
+- MDaemon cho phép nhiều người dùng truy cập và lấy email từ cùng một mạng LAN, chỉ cần thông qua kết nối dial-up hoặc PPP từ nhà cung cấp dịch vụ mạng. Điều này giúp tiết kiệm chi phí và cải thiện hiệu quả trong môi trường doanh nghiệp.
+### 1.2.3.Tính năng đa luồng và hiệu suất cao
+- MDaemon hỗ trợ đa luồng, cho phép xử lý đồng thời nhiều tác vụ email mà không làm giảm hiệu suất hệ thống. Điều này giúp tăng cường khả năng đáp ứng trong môi trường có khối lượng email lớn.
+### 1.2.4.Chức năng lọc nội dung và chặn thư spam
+- Phần mềm cung cấp các công cụ lọc nội dung và chặn thư spam (thư rác), giúp người dùng duy trì hộp thư đến sạch sẽ và bảo mật hơn. Các thư rác sẽ được tự động nhận diện và xử lý, giảm thiểu rủi ro an ninh.
+### 1.2.5.Quản trị từ xa và bảo mật
+- MDaemon hỗ trợ quản trị từ xa, giúp người quản lý có thể cấu hình và kiểm soát hệ thống mà không cần phải tiếp cận trực tiếp. Hệ thống cũng tích hợp các cơ chế bảo mật mạnh mẽ, bao gồm mật khẩu an toàn và các biện pháp bảo vệ khác.
+### 1.2.6.Hỗ trợ nhiều tên miền
+- MDaemon có khả năng quản lý nhiều tên miền email trên cùng một máy chủ, giúp doanh nghiệp dễ dàng triển khai và duy trì các tài khoản email cho nhiều bộ phận hoặc chi nhánh khác nhau.
 # 2.Triển khai MDaemon
 ## 2.1.Cài đặt MDaemon
 - `https://mdaemon.com/pages/downloads-mdaemon-mail-server-free-trial`
