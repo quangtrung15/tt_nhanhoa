@@ -32,6 +32,88 @@
 - ![image](https://github.com/user-attachments/assets/70a01a65-8c34-4b10-8066-e913a9e9502d)
 - ![image](https://github.com/user-attachments/assets/f5358791-347f-41de-a89e-5e44046241ee)
 - ![image](https://github.com/user-attachments/assets/bbdfa041-81dd-4e97-975d-f9281ff97540)
+- ![image](https://github.com/user-attachments/assets/27e555cf-f051-46ec-9901-46f37b92eef9)
+- ![image](https://github.com/user-attachments/assets/d703c5e4-44db-4e29-a305-be2dac2c6ddc)
+- Chỉnh sửa file hosts C:\Windows\System32\drivers\etc\hosts thêm dòng
+-  `192.168.88.145	mail.qtrung.tr.vn`
+-  ![image](https://github.com/user-attachments/assets/ccd76516-cb53-4706-a4d6-bf202f63add1)
+-  ![image](https://github.com/user-attachments/assets/ddadbf53-65b7-4065-8947-4fd11d7c9e71)
+-  ![image](https://github.com/user-attachments/assets/e28ed644-ded6-4fc0-99ad-d3833395957c)
+-  Tạo user
++ Mở Open MDaemon Configuration Session
++ ![image](https://github.com/user-attachments/assets/a09a36ac-8cf4-4ead-b838-40cb0879592d)
++ Chọn User Manager
++ ![image](https://github.com/user-attachments/assets/89a0d187-223c-40a0-8473-06527bc3a938)
++ ![image](https://github.com/user-attachments/assets/b44e1593-fc83-46d5-88e6-03d3285878c8)
++ ![image](https://github.com/user-attachments/assets/2ccd8274-743a-4c72-a2e4-6169aae6a2d4)
++ ![image](https://github.com/user-attachments/assets/b0bc765e-0394-4d47-b7d4-66a01c328693)
++ ![image](https://github.com/user-attachments/assets/8901732f-11b8-481e-88d9-ed40229e9a3b)
++ ![image](https://github.com/user-attachments/assets/00424195-6c81-450d-8c38-e70231abd4c8)
+- Tạo group
+- ![image](https://github.com/user-attachments/assets/0d494cba-b25e-4490-adad-c8006cf6051d)
+- ![image](https://github.com/user-attachments/assets/74b84f62-a3b4-4996-a94f-1c0ad854624c)
+- ![image](https://github.com/user-attachments/assets/0c406916-f960-4018-a7b4-267c79fa6fc6)
+- ![image](https://github.com/user-attachments/assets/a8c69b52-d3a8-4d05-af83-7328afc1ab56)
+- ![image](https://github.com/user-attachments/assets/f5da79fc-165c-4675-8e48-37451f35aa67)
+- ![image](https://github.com/user-attachments/assets/bd605767-57d5-4bf6-a234-26f14bf2688d)
+- Tạo Alias
+- ![image](https://github.com/user-attachments/assets/02cd88b3-209b-4567-9890-09c50052caea)
+- ![image](https://github.com/user-attachments/assets/4c42aec4-e764-4f06-8e27-6e170796e7a5)
+- Tạo Mailing lists email (một danh sách nhiều địa chỉ email được sử dụng để gửi cùng tới 1 nhóm người.)
+- ![image](https://github.com/user-attachments/assets/87f0a434-a1e9-49f6-aebd-ea0728362490)
+- ![image](https://github.com/user-attachments/assets/f4301246-da78-4283-92a1-e8c04237dd2c)
+- ![image](https://github.com/user-attachments/assets/717e5469-5af4-483c-b307-14fadc29f223)
+- ![image](https://github.com/user-attachments/assets/d143f908-78e8-4ee8-9ec0-a3743e3f20be)
+- ![image](https://github.com/user-attachments/assets/05ad64fd-715a-4327-8086-0e9617fb678a)
+## Thiết lập chính sách về mật khẩu account email
+- ![image](https://github.com/user-attachments/assets/028a0509-7328-403e-8e1c-40e51860f820)
+- ![image](https://github.com/user-attachments/assets/4ef868bd-3b3a-402e-bf68-312c0027b44b)
+- ![image](https://github.com/user-attachments/assets/6a9b7f52-c9e1-4a43-bbd6-dd04fd4d4e42)
+
+## Thiết lập chữ ký email
+- ![image](https://github.com/user-attachments/assets/30a1b529-1eaa-4ca8-a7f1-4ea2a9ef9c23)
+- ![image](https://github.com/user-attachments/assets/6ac9780c-f2aa-4076-9fde-faddd70d10ba)
+- ![image](https://github.com/user-attachments/assets/653e815c-6421-430e-9cae-1858dec749e7)
+- ![image](https://github.com/user-attachments/assets/80d8abbf-9f58-485a-aeae-b5f89ad2924a)
+## Thiết lập forward email
+## Đổi mật khẩu account admin global, admin domain
+- ![image](https://github.com/user-attachments/assets/57c9f983-8196-4aea-958b-2d9dd5645060)
+- ![image](https://github.com/user-attachments/assets/1b1c02e1-bbfc-4258-bd07-f31f6b9c78ad)
+
+## Phân quyền cho tài khoản thành admin của domain
+- ![image](https://github.com/user-attachments/assets/d0729f6b-c70d-4598-90f9-5dd4cba27c31)
+
+## Kiểm tra log gửi/nhận email 
+- ![image](https://github.com/user-attachments/assets/4167ea32-fe25-4cdd-9b1e-e82154f4a0d0)
+- ![image](https://github.com/user-attachments/assets/685ebafc-6ea5-4658-9081-532db256b910)
+## Tìm hiểu thêm về Dynamic screening trong Security của Mdaemon
+- ![image](https://github.com/user-attachments/assets/e7df2ef1-6823-4ccc-8781-db88723eae10)
+- ![image](https://github.com/user-attachments/assets/b8d87678-3679-4ca8-8d8d-d79048661c67)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
