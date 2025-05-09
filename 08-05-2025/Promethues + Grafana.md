@@ -59,7 +59,7 @@
   sudo chown -R prometheus:prometheus /var/lib/prometheus
   ```
 - ![image](https://github.com/user-attachments/assets/df58fd1a-43c8-40d2-a630-b482fdca812a)
-- Tệp này prometheus.ymllà tệp cấu hình Prometheus chính
+- Tệp này prometheus.yml là tệp cấu hình Prometheus chính
 - `sudo nano /etc/prometheus/prometheus.yml`
 - ![image](https://github.com/user-attachments/assets/76196777-cae5-47a1-87f2-26bb5fa0989b)
 - ![image](https://github.com/user-attachments/assets/7ad9c628-1137-4a6c-adc7-c970191bab5d)
@@ -387,6 +387,11 @@
 |--------|---------|
 | `mysql_up` | Trạng thái MySQL (1 là OK, 0 là down) |
 | `mysql_global_status_uptime` | Thời gian uptime MySQL (giây) |
+
+- ![image](https://github.com/user-attachments/assets/9bd238d1-4e06-4cb4-9147-2bf44349eef9)
+- ![image](https://github.com/user-attachments/assets/b53a50e5-c6f7-4fb9-a44b-ec03c2da09f1)
+- ![image](https://github.com/user-attachments/assets/fb7f5a82-8c3b-4d94-a5cc-23f28b5e726d)
+
 
 
 
