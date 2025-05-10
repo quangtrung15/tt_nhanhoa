@@ -61,3 +61,79 @@
 - Nếu health check không thể kết nối tới server, nó sẽ tự động loại bỏ server khởi backend, các traffic tới sẽ không được forward tới server cho đến khi nó có thể thực hiện được health check. Nếu tất cả server thuộc backend đều xảy vấn đề, dịch vụ sẽ trở trên không khả dụ (trả lại status code 500) cho đến khi 1 server thuộc backend từ trạng thái không khả dụ chuyển sang trạng thái sẵn sàng.
 ## 1.4.Tài liệu tham khảo 
 - https://blog.cloud365.vn/linux/tong-quan-haproxy/
+# 2.Triển khai
+- Triển khai HAProxy, KeepAlived, Apache2 trên cả 2 VM
+- Cài đặt trên 2 máy
+- `sudo apt-get install apache2 keepalived haproxy`
+- Chỉnh sửa nội dung file index.html của từng máy để test cân bằng tải
+- ![image](https://github.com/user-attachments/assets/827cb6fd-37b9-4040-95cf-4ec69ea94f73)
+- ![image](https://github.com/user-attachments/assets/9a4e3960-4dba-4b31-9e96-09d2ceafcb69)
+- Cấu hình keepalived
+- File config của Keepalived sẽ được lưu ở /etc/keepalived/keepalived.conf
+- Thực hiện sửa file cấu hình trên từng máy
+- Trên máy VM 1
+- `nano /etc/keepalived/keepalived.conf`
+- Nội dung file:
+- ```
+  global_defs {
+    router_id test1                            #khai báo route_id của keepalived
+  }
+  vrrp_script chk_haproxy {
+    script "killall -0 haproxy"
+    interval 2
+    weight 2
+  }
+  vrrp_instance VI_1 {
+    virtual_router_id 51
+    advert_int 1
+    priority 100
+    state MASTER
+    interface ens33                            #thông tin tên interface của server, bạn dùng lệnh `ifconfig` để xem và điền cho đúng
+    virtual_ipaddress {
+      192.168.88.151 dev ens33           		#Khai báo Virtual IP (VIP) cho interface tương ứng
+    }
+   authentication {
+       auth_type PASS
+       auth_pass 123456                    #Password này phải khai báo giống nhau giữa các server keepalived
+       }
+    track_script {
+      chk_haproxy
+    }
+  }
+  ```
+- Trên máy VM2
+- `nano /etc/keepalived/keepalived.conf`
+- ```
+  global_defs {
+    router_id test2
+  }
+  vrrp_script chk_haproxy {
+    script "killall -0 haproxy"
+    interval 2
+    weight 2
+  }
+  vrrp_instance VI_1 {
+    virtual_router_id 51
+    advert_int 1
+    priority 99
+    state BACKUP
+    interface ens33
+    virtual_ipaddress {
+      192.168.88.151 dev ens33
+    }
+  authentication {
+          auth_type PASS
+          auth_pass 123456
+          }
+  track_script {
+      chk_haproxy
+      }
+    }
+  ```
+- Khởi động lại keepalived để apply
+- `systemctl restart keepalived`
+- Chú ý: Khai báo với test1 state là MASTER , priority 100 Khác với test2 state BACKUP và priority 99
+- ![image](https://github.com/user-attachments/assets/4e447309-e0a6-4c86-994e-c233475e468f)
+- ![image](https://github.com/user-attachments/assets/1e67e321-b786-4919-aa29-74342b6b5b36)
+
+
