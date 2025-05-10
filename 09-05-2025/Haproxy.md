@@ -133,7 +133,7 @@
 - Khởi động lại keepalived để apply
 - `systemctl restart keepalived`
 - Chú ý: Khai báo với test1 state là MASTER , priority 100 Khác với test2 state BACKUP và priority 99
+- Kiểm tra
+- Truy cập IP VIP để kiểm tra http://192.168.88.151
 - ![image](https://github.com/user-attachments/assets/4e447309-e0a6-4c86-994e-c233475e468f)
 - ![image](https://github.com/user-attachments/assets/1e67e321-b786-4919-aa29-74342b6b5b36)
-
-
