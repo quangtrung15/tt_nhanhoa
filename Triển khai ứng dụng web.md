@@ -50,7 +50,7 @@
 - Giải nén vào thư mục, ví dụ: C:\PHP.
 - Đổi tên file php.ini-development → php.ini
 ### Bước 3: Cấu hình IIS để chạy PHP
-#### 3.1. Thêm PHP vào IIS:
+### 3.1. Thêm PHP vào IIS:
 - Mở IIS Manager (inetmgr).
 - Chọn Handler Mappings > Add Module Mapping:
 - ![image](https://github.com/user-attachments/assets/b3663e91-4159-4813-8bab-93db659c1b5c)
